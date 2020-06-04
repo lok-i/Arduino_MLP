@@ -53,10 +53,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <sys/time.h>
+#include <time.h>
 #include <math.h>
 
-#define RATE 0.1
+#define RATE 0.01
 #define EPSLON 0.0000005
 #define MOMENTUM 0.8
 
