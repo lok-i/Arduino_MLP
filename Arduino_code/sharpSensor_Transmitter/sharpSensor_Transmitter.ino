@@ -15,16 +15,17 @@ void loop() {
   
   // 
   //Serial.println(analogRead(sensor));
-  float volts = analogRead(sensor)*0.0048828125;  // value from sensor * (5/1024)
+  float volts = analogRead(sensor)*0.0048828125;  // v nalue from sensor * (5/1024)
   Serial.print("volts:");
   Serial.println( volts);               
 
 
-  int distance = 29.988*pow(volts, -1.173); // worked out from datasheet graph
-  delay(500); // slow down serial port 
+  float distance = 29.988*pow(volts, -1.173); // worked out from datasheet graph
   
-  if (distance <= 80){
-    Serial.print("\tdistance:");
+  
+  
+    Serial.print("distance:");
     Serial.println(distance);   // print the distance
-  }
+    delay(100); // slow down serial port 
+  
 }
