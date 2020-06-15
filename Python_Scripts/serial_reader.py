@@ -31,7 +31,7 @@ def xtract_value(string_i):
 
 
 bluetooth = '/dev/rfcomm0'
-usb = '/dev/ttyUSB0'
+usb = '/dev/ttyUSB2'
 
 arduino = serial.Serial(usb, 9600, timeout=0.1)
 
@@ -83,10 +83,10 @@ for i in range(no_of_data_pts):
 		if(plot_graph):
 			ax1 = plt.subplot(211)
 			ax1.clear()
-			plt.plot(x,V,label = "Measured_distance")
+			plt.plot(x,V,label = "Measured_distance",color='r')
 			ax2 = plt.subplot(212)
 			ax2.clear()
-			plt.plot(x,D,label = "Predicted_distance")
+			plt.plot(x,D,label = "Predicted_distance",color='r')
 			ax1.legend()
 			ax2.legend()
 			plt.pause(0.01)
@@ -98,5 +98,5 @@ for i in range(no_of_sets):
 	file_2.write("{"+str((true_length/80.0))+"},")
 
 file_2.close()
-plt.savefig(str(true_length)+".png")
+#plt.savefig(str(true_length)+".png")
 
